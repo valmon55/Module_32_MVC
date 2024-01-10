@@ -42,11 +42,11 @@ namespace MVC.StartApp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseMiddleware<LoggingMiddleware>();
 
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseMiddleware<LoggingMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
