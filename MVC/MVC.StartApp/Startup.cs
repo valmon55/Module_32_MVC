@@ -1,3 +1,4 @@
+using ASP.StartApp.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -45,7 +46,7 @@ namespace MVC.StartApp
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseMiddleware<LoggingMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
