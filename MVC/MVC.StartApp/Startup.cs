@@ -30,7 +30,7 @@ namespace MVC.StartApp
             services.AddSingleton<IBlogRepository, BlogRepository>();
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection), ServiceLifetime.Singleton);
             services.AddControllersWithViews();
         }
 
