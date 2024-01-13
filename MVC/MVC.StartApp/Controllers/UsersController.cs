@@ -19,6 +19,16 @@ namespace MVC.StartApp.Controllers
             var users = await _repo.GetUsers();
             return View(users);
         }
-
+        [HttpGet]
+        public async Task<IActionResult> Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(User newUser)
+        {
+            await _repo.AddUser(newUser);
+            return View(newUser);
+        }
     }
 }

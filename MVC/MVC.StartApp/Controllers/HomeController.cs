@@ -23,18 +23,18 @@ namespace MVC.StartApp.Controllers
 
         public async Task <IActionResult> Index()
         {
-            var newUser = new User()
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "Andrey",
-                LastName = "Petrov",
-                JoinDate = DateTime.Now
-            };
+            //var newUser = new User()
+            //{
+            //    Id = Guid.NewGuid(),
+            //    FirstName = "Andrey",
+            //    LastName = "Petrov",
+            //    JoinDate = DateTime.Now
+            //};
 
-            await _repo.AddUser(newUser);
+            //await _repo.AddUser(newUser);
 
-            // Выведем результат
-            Console.WriteLine($"User with id {newUser.Id}, named {newUser.FirstName} was successfully added on {newUser.JoinDate}");
+            //// Выведем результат
+            //Console.WriteLine($"User with id {newUser.Id}, named {newUser.FirstName} was successfully added on {newUser.JoinDate}");
 
             return View();
         }
