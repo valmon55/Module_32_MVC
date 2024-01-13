@@ -9,7 +9,7 @@ namespace ASP.StartApp.Middlewares
     public class LoggingMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly RequestRepository _repo;
+        private RequestRepository _repo;
 
         /// <summary>
         ///  Middleware-компонент должен иметь конструктор, принимающий RequestDelegate
@@ -19,7 +19,6 @@ namespace ASP.StartApp.Middlewares
             _next = next;
             _repo = requestRepository;
         }
-
         /// <summary>
         ///  Необходимо реализовать метод Invoke  или InvokeAsync
         /// </summary>
