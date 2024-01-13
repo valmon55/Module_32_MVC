@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Регистрация нового пользователя.";
 }
+@model MVC.StartApp.Models.Db.User;
 
 <style>
     table {
@@ -35,15 +36,15 @@
     <div>
         <h3 style="text-align: left">Добро пожаловать в наш блог!</h3>
         <br>
-        <form method="post" asp-controller="UsersController" asp-action="Register" >
+        <form method="post" asp-controller="Users" asp-action="Register" >
             <table>
                 <tr>
-                    <td>Имя:</td>
-                    <td><input type="text" name="FirstName" /> </td>
+                    <label asp-for="FirstName">Имя:</label>
+                    <input class="form-control" asp-for="FirstName" />
                 </tr>
                 <tr>
-                    <td>Фамилия:</td>
-                    <td><input type="text" name="LastName" /></td>
+                    <label asp-for="LastName">Фамилия:</label>
+                    <input class="form-control" asp-for="LastName" />
                 </tr>
             </table>
             <br>
