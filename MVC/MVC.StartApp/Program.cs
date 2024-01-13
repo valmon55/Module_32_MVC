@@ -21,6 +21,8 @@ namespace MVC.StartApp
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    // Переопределяем путь до статических файлов по умолчанию
+                    //webBuilder.UseWebRoot("Views\\Home");
                 });
     }
 }

@@ -42,11 +42,13 @@ namespace MVC.StartApp.Controllers
         {
             var authors = await _repo.GetUsers();
 
-            Console.WriteLine("See all blog authors:");
-            foreach (var author in authors)
-                Console.WriteLine($"Author name {author.FirstName}, joined {author.JoinDate}");
-
-            return View();
+            //Console.WriteLine("See all blog authors:");
+            //foreach (var author in authors)
+            //{
+            //    //Console.WriteLine($"Author name {author.FirstName}, joined {author.JoinDate}");
+            //    Console.WriteLine($"Author with id {author.Id}, named {author.FirstName}, joined {author.JoinDate}");
+            //}
+            return View(authors);
         }
         public IActionResult Privacy()
         {
