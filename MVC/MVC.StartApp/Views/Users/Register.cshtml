@@ -34,10 +34,12 @@
 
 <div class="text-center">
     <div>
-        <h3 style="text-align: left">Добро пожаловать в наш блог!</h3>
-        <br>
-        <form method="post" asp-controller="Users" asp-action="Register" >
-            <table>
+        @if (Model == null)
+        {
+            <h3 style="text-align: left">Добро пожаловать в наш блог!</h3>
+            <br>
+            <form method="post" asp-controller="Users" asp-action="Register" >
+                <table>
                 <tr>
                     <td><label asp-for="FirstName">Имя:</label></td>
                     <td><input class="form-control" asp-for="FirstName" /></td>
@@ -51,6 +53,11 @@
             <div class="submit-button">
                 <input type="submit" value="Регистрация" />
             </div>
-        </form>
+            </form>
+        }
+        else
+        {
+            @await Html.PartialAsync("_Thanks.cshtml")
+        }
     </div>
 </div>
