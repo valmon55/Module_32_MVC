@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Visited links";
+    ViewData["Title"] = "View visited URL";
 }
 
 <style>
@@ -27,7 +27,7 @@
 </style>
 
 <div class="text-center">
-    <h2 class="display-4" style="text-align:left">Пользователи проекта</h2>
+    <h2 class="display-4" style="text-align:left">Посещенные URL</h2>
     <br>
     <table>
         <tr>
@@ -35,12 +35,12 @@
             <td>Дата</td>
             <td>URL</td>
         </tr>
-        @foreach (var user in Model)
+        @foreach (var request in Model)
         {
             <tr>
-                <td>@user.Id</td>
-                <td>@user.FirstName</td>
-                <td>@user.JoinDate</td>
+                <td>@request.Id</td>
+                <td>@request.Date</td>
+                <td>@request.Url</td>
             </tr>
         }
     </table>
