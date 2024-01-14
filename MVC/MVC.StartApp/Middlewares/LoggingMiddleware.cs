@@ -25,11 +25,11 @@ namespace ASP.StartApp.Middlewares
         public async Task InvokeAsync(HttpContext context)
         {
             string url = "http://" + context.Request.Host.Value + context.Request.Path;
-            Log(url);
+            await Log(url);
             //Console.WriteLine($"[{DateTime.Now}]: New request to http://{context.Request.Host.Value + context.Request.Path}");
             await _next?.Invoke(context);
         }
-        private async void Log(string url)
+        private async Task Log(string url)
         {
             if (_repo != null) 
             { 
