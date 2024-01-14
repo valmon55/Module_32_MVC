@@ -24,7 +24,7 @@ namespace ASP.StartApp.Middlewares
         /// </summary>
         public async Task InvokeAsync(HttpContext context)
         {
-            string url = context.Request.Host.Value + context.Request.Path;
+            string url = "http://" + context.Request.Host.Value + context.Request.Path;
             Log(url);
             //Console.WriteLine($"[{DateTime.Now}]: New request to http://{context.Request.Host.Value + context.Request.Path}");
             await _next?.Invoke(context);

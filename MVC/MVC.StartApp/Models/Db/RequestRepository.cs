@@ -23,5 +23,9 @@ namespace MVC.StartApp.Models.Db
             }
             await _context.SaveChangesAsync();
         }
+        public async Task<Request[]> GetURLs()
+        {
+            return await _context.Requests.ToArrayAsync();
+        }
     }
 }
