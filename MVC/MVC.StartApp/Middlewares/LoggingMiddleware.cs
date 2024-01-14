@@ -9,12 +9,12 @@ namespace ASP.StartApp.Middlewares
     public class LoggingMiddleware
     {
         private readonly RequestDelegate _next;
-        private RequestRepository _repo;
+        private IRequestRepository _repo;
 
         /// <summary>
         ///  Middleware-компонент должен иметь конструктор, принимающий RequestDelegate
         /// </summary>
-        public LoggingMiddleware(RequestDelegate next, RequestRepository requestRepository)
+        public LoggingMiddleware(RequestDelegate next, IRequestRepository requestRepository)
         {
             _next = next;
             _repo = requestRepository;
