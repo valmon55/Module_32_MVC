@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace MVC.StartApp.Controllers
 {
-    public class RequestController : Controller
+    public class LogsController : Controller
     {
         private readonly IRequestRepository _repo;
-        public RequestController(IRequestRepository repo)
+        public LogsController(IRequestRepository repo)
         {
             _repo = repo;
         }
